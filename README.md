@@ -9,6 +9,10 @@
 Trovares xGT is the fastest Deep Analytics Platform on the market and perfect for your mission-critical applications.
 With performance speeds 100's of times that of current market options, you can now empower your data scientist with the best development environment to meet your needs.
 
+## Demos
+
+There are several [demo notebooks](demos/) available within this repo.
+
 ## Getting Started
 
 You need to set up a Trovares xGT server on a platform that makes sense for you, and set up a Python environment from which the Trovares xGT client is run.
@@ -74,7 +78,7 @@ This is done by appending `--user` at the end of a `pip` command.
 
 The available platforms for running the server are:
 1.  An AWS cloud instance running Trovares xGT.
-    * The instance is run in your own account and is set up using cloudformation.
+    * The instance is run in your own account and is set up using this [cloudformation](AWS/cfxgt.json).
     * Launching requires use of the [boto3](https://pypi.org/project/boto3/) Python package.
     * [Launch AWS EC2](AWS/launchxGT.ipynb)
 2.  A docker daemon running on your platform (on-premises).
