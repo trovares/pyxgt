@@ -83,8 +83,11 @@ The available platforms for running the server are:
     * [Launch AWS EC2](AWS/launchxGT.ipynb)
 2.  A docker daemon running on your platform (on-premises).
     * Any x86 system running docker can be used.
+    * There are two versions available;
+      - The `trovares/xgt` image where the application runs as the root user.
+      - The `trovares/nonroot-xgt` image where the application runs as the `xgtd` user.
     * Perform the equivalent of `docker pull trovares/xgt`.
-    * More information is available at: [trovares/xgt](https://hub.docker.com/r/trovares/xgt).
+    * More information is available at [trovares/xgt](https://hub.docker.com/r/trovares/xgt) and [trovares/nonroot-xgt](https://hub.docker.com/r/trovares/nonroot-xgt).
 3.  A docker daemon (docker desktop) running on your laptop.
     * The [docker desktop](https://www.docker.com/get-started) hosting environment can run on:
         - Windows (with WSL2 enabled)
