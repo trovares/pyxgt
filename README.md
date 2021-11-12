@@ -6,6 +6,8 @@
 [![Latest Version](https://img.shields.io/pypi/pyversions/xgt.svg)](https://pypi.python.org/pypi/xgt)
 [![License](https://img.shields.io/pypi/l/xgt.svg)](https://pypi.python.org/pypi/xgt)
 
+[![Twitter Follow](https://img.shields.io/twitter/follow/TrovaresxGT)](https://twitter.com/TrovaresxGT)
+
 Trovares xGT is the fastest Deep Analytics Platform on the market and perfect for your mission-critical applications.
 With performance speeds 100's of times that of current market options, you can now empower your data scientist with the best development environment to meet your needs.
 
