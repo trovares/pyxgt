@@ -2,9 +2,19 @@
 
 ---
 
+#### PyPi
+
 [![Latest Version](https://img.shields.io/pypi/v/xgt.svg)](https://pypi.python.org/pypi/xgt)
 [![Latest Version](https://img.shields.io/pypi/pyversions/xgt.svg)](https://pypi.python.org/pypi/xgt)
 [![License](https://img.shields.io/pypi/l/xgt.svg)](https://pypi.python.org/pypi/xgt)
+[![PyPI - Downloads](https://img.shields.io/pypi/dw/xgt.svg)](https://pypi.org/project/xgt/#history)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/xgt.svg)](https://pypi.org/project/xgt/#history)
+
+#### GitHub
+
+[![GitHub stars](https://img.shields.io/github/stars/trovares/pyxgt.svg?style=social&label=Stars)](https://github.com/trovares/pyxgt)
+
+#### Social Media
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/TrovaresxGT)](https://twitter.com/TrovaresxGT)
 
