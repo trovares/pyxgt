@@ -10,8 +10,8 @@
 1. Connect a python client:
    ```
    $ python3
-   import xgt
-   server = xgt.Connection(hostname='<public-ip-of-EC2-instance>', userid='xgt')
+   >>> import xgt
+   >>> server = xgt.Connection(hostname='<public-ip-of-EC2-instance>', userid='xgt')
    ```
 
 1. See [Trovares xGT documentation](docs.trovares.com) for help on writing python scripts, getting data ingested, and writing Cypher queries.
