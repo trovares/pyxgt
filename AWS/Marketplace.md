@@ -4,14 +4,13 @@
    ```
    $ python3 -m pip install --user xgt
    ```
-
-1. Launch an EC2 instance
+1. Launch an EC2 instanced, with port TCP port 4367 open for incoming connections.
 
 1. Connect a python client:
    ```
    $ python3
    >>> import xgt
-   >>> server = xgt.Connection(hostname='<public-ip-of-EC2-instance>', userid='xgt')
+   >>> server = xgt.Connection(host='<public-ip-of-EC2-instance>', port=4367, userid='xgt')
    ```
 
 1. See [Trovares xGT documentation](docs.trovares.com) for help on writing python scripts, getting data ingested, and writing Cypher queries.
