@@ -93,16 +93,14 @@ Running the Trovares xGT application can be done in a variety of locations.
 #### On AWS
 
 1.  A quick launch of Trovares xGT stack on AWS using CloudFormation:  [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=region#/stacks/new?stackName=trovaresxgt&templateURL=https://trovaresxgt.s3.us-west-2.amazonaws.com/cfxgt.json)
+1.  (Coming soon ...) Running Trovares xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
+    * This process requires subscribing to the Trovares xGT product.
+    * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
+    * See [Instructions for launching on the AWS Marketplace](AWS/Marketplace.md).
 1.  An AWS cloud instance running Trovares xGT.
     * The instance is run in your own account and is set up using this [cloudformation](AWS/cfxgt.json).
     * Launching requires use of the [boto3](https://pypi.org/project/boto3/) Python package.
     * [Launch AWS EC2](AWS/launchxGT.ipynb)
-1.  (Coming soon ...) Running Trovares xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
-    * This process requires subscribing to the Trovares xGT product.
-    * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
-    * Upon launching an instance running Trovares xGT, there are two ways to use the application:
-      - `ssh` connect to the instance as user `ec2-user`, set up the Python environment on that instance [as described above](#command-line-on-linux), then connect from any Python script.
-      - Set up a Python environment [as described above](#client-setup) and then either `ssh` connect to the EC2 instance with port forwarding or connect to the EC2 instance at port 4367.
 
 #### On your own systems
 

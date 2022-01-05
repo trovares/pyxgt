@@ -1,6 +1,6 @@
 ## AWS Marketplace Usage
 
-1. Ensure you have the Python package `xGT` installed:
+1. Ensure you have the Python package `xGT` installed in your environment:
    ```bash
    $ python3 -m pip install --user xgt
    ```
