@@ -93,8 +93,8 @@ Running the Trovares xGT application can be done in a variety of locations.
 #### On AWS
 
 1.  A quick launch of Trovares xGT stack on AWS using CloudFormation:  [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=region#/stacks/new?stackName=trovaresxgt&templateURL=https://trovaresxgt.s3.us-west-2.amazonaws.com/cfxgt.json)
-1.  (Coming soon ...) Running Trovares xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
-    * This process requires subscribing to the Trovares xGT product.
+1.  Running Trovares xGT on your own AWS instances from the [AWS Marketplace](https://aws.amazon.com/marketplace).
+    * This process requires subscribing to the [Trovares xGT product](https://aws.amazon.com/marketplace/pp/prodview-z7tnpolh7wy4i).
     * All AWS instances with 8 vCPUs or fewer are free for the software; AWS charges for the hardware may apply.
     * See [Instructions for launching on the AWS Marketplace](AWS/Marketplace.md).
 1.  An AWS cloud instance running Trovares xGT.
