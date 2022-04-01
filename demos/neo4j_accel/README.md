@@ -116,3 +116,9 @@ Running this notebook results in a neo4j docker image to be pulled on to the ser
 After completing the `X_setup` notebook, there are two docker containers running---`neo4j` and `xGT`---with data loaded into `neo4j`.
 These containers have exposed ports that enable the jupyter notebook environment to interact with them.
 
+## The `query` notebook
+
+Once the dataset has been setup in a running `neo4j` and an `xGT` is launched and ready, the `query` notebook can be run.
+This notebook connects to `neo4j` using the [Neo4j Python Driver](https://neo4j.com/docs/api/python-driver/current/index.html), connects to the `neo4j-arrow` plugin, and connects to the running `xGT` server.
+There is logic in a Python function that coordinates the copying of data from `neo4j` into `xGT`.
+Finally, there are two queries included in this notebook that can be run directly on `neo4j` or on the `xGT` server after invoking the `arrow flight` plugin to transfer the data.
