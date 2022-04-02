@@ -2,7 +2,7 @@
 
 The collection of jupyter notebooks in this directory contain all that is need to explore using [Trovares xGT](http://www.trovares.com) as an accelerator for neo4j users.
 
-The easiest way to do this is to clone this github repo into the linux or virtual linux environment that will run these notebooks.
+The easiest way to do this is to clone this github repo into the Linux or virtual Linux environment that will run these notebooks.
 
 ## Platform Requirements
 
@@ -10,29 +10,30 @@ The platform to run this demo must provide these minimal features:
 
   - There must be x86 compute cores on this system.
     This means the demo will not run on M1-chip Macbook systems or on ARM-based cloud instances.
-  - There must be a python application available to run the jupyter notebook server.
+  - There must be a Python installation available to run the jupyter notebook server.
     The version of Python must be 3.6 or later.
-  - There must be support for running docker containers on the platform.
+  - There must be support for running Docker containers on the platform.
 
 ### Windows
 
-On windows systems, the requirements are that you have WSL2 enabled, some installation of linux as a WSL2 subsystem, and have [docker desktop](http://www.docker.com) installed.
+On windows systems, the requirements are that you have WSL2 enabled, some installation of Linux as a WSL2 subsystem, and have [docker desktop](http://www.docker.com) installed.
 
 ### Mac OS
 
-You must have [docker desktop](http://www.docker.com) installed as well as a Python.
+You must have [docker desktop](http://www.docker.com) installed as well as a Python installation.
 
 ### Linux
 
-You must have a docker daemon installed and a Python version 3.6 or later.
+You must have a Docker daemon installed and a Python installation, version 3.6 or later.
 
 # Launching the Jupyter Notebooks
 
-The *jupyter notebook server* must run on the same platform as the [neo4j](http://www.neo4j.com) docker container and the [Trovares xGT](http://www.trovares.com) docker container.
+The *jupyter notebook server* must run on the same platform as the [neo4j](http://www.neo4j.com) Docker container and the [Trovares xGT](http://www.trovares.com) Docker container.
 
 ## Windows
 
-To set up this client/server with tunneling, open a shell prompt within the Linux platform installed inside WSL2.  This must be the same Linux installation that runs docker.
+To set up this client/server with tunneling, open a shell prompt within the Linux platform installed inside WSL2.
+If there are multiple Linux distributions installed on your Windows systems, you must open the shell in the Linux distribution that the Docker Desktop uses to run its containers.
 
 After cloning this repo from the shell prompt, navigate to the directory holding these notebooks and launch:
 
@@ -111,9 +112,9 @@ The notebook name begins with the size (number of edges); and there are two note
 ## The `X_setup` notebook
 
 This notebook, for each dataset size `X`, sets up a location on the server for storing all of the data in neo4j as well as the neo4j plugins needed for this demo.
-Running this notebook results in a neo4j docker image to be pulled on to the server, a host filesystem directory structure getting set up with required plugins and the select dataset, neo4j ingesting this data using the fastest `neo4j_admin import ...` method, along with installing an xGT docker image.
+Running this notebook results in a neo4j Docker image to be pulled on to the server, a host filesystem directory structure getting set up with required plugins and the select dataset, neo4j ingesting this data using the fastest `neo4j_admin import ...` method, along with installing an xGT Docker image.
 
-After completing the `X_setup` notebook, there are two docker containers running---`neo4j` and `xGT`---with data loaded into `neo4j`.
+After completing the `X_setup` notebook, there are two Docker containers running---`neo4j` and `xGT`---with data loaded into `neo4j`.
 These containers have exposed ports that enable the jupyter notebook environment to interact with them.
 
 ## The `query` notebook
