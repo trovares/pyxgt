@@ -10,6 +10,7 @@ Quick Links:
 
   - [Platform Requirements](#platform-requirements)
   - [Launching the Jupyter Notebooks](#launching-the-jupyter-notebook-server)
+  - [Data used in the demo](#data-used-in-the-demo)
   - [Running the demo](#running-the-demo)
 
 ## Platform Requirements
@@ -122,38 +123,32 @@ This will connect the browser to the remote jupyter session and the notebooks fo
 
 Once you have established the `ssh` tunnel, the browser works as if the jupyter notebook server is local, and all communication between the client browser and the jupyter notebook server is sent between the two systems over an encrypted link.
 
-## Running the demo
+## Data used in the demo
 
-The demo is run in two steps.
-
-First, run a setup notebook, which downloads and runs neo4j and xGT Docker containers and loads data into neo4j.
-For this step, choose one of the `X_setup` notebooks.
-After this setup step, the data is loaded into neo4j, simulating a workflow in which neo4j is already used.
-
-Next, run the `query` notebook, which demonstrates using xGT as an accelerator for neo4j. 
-This notebook will transfer data from neo4j to xGT and run cypher queries on xGT.
-
-### Data used
-
-The graph data used in these notebooks contain a single vertex type with only one attribute called `id`, one edge type with a `source` and `target` attribute indicating the two endpoints of the edge, and an additional attribute called `timestamp` that is stored internally as an integer (think [Unix Epoch Time](https://en.wikipedia.org/wiki/Unix_time)).
-
-For each synthetic dataset, the size is the number of edges, and the number of nodes or vertices is about 1 for every 10 edges.
-For example, the dataset with 1 billion edges has around 100 million nodes.
+The data used in the demo notebooks contain a single vertex type with only one attribute called `id`, one edge type with a `source` and `target` attribute indicating the two endpoints of the edge, and an additional attribute called `timestamp` that is stored internally as an integer (think [Unix Epoch Time](https://en.wikipedia.org/wiki/Unix_time)). 
 
 There are several pre-canned dataset sizes among the suite of notebooks.
-The notebook name begins with the size (number of edges); and there are two notebooks for each size.
+The notebook name begins with the size (number of edges). 
 
-### The `X_setup` notebook
+For each synthetic dataset, the size is the number of edges, and the number of nodes or vertices is about 1 for every 10 edges.
+For example, the dataset with 1 billion edges has around 100 million nodes. 
 
-This notebook, for each dataset size `X`, sets up a location on the server for storing all of the data in neo4j as well as the neo4j plugins needed for the demo.
-Running this notebook installs a neo4j Docker image on the server, creates a host filesystem directory with required plugins and the select dataset, ingesting this data using the fastest `neo4j_admin import ...` method, and installs an xGT Docker image.
+## Running the demo
 
-After completing the `X_setup` notebook, there are two Docker containers running---`neo4j` and `xGT`---with data loaded into `neo4j`.
-These containers have exposed ports that enable the jupyter notebook environment to interact with them.
+The demo consists of running one of the [setup notebooks](#setup-notebook) followed by a [query notebook](#query-notebook). 
 
-### The `query` notebook
+### Setup notebook 
 
-Once the dataset has been set up in a running `neo4j` and an `xGT` is launched and ready, the `query` notebook can be run.
-This notebook connects to `neo4j` using the [Neo4j Python Driver](https://neo4j.com/docs/api/python-driver/current/index.html), connects to the `neo4j-arrow` plugin, and connects to the running `xGT` server.
-A Python function coordinates the copying of data from `neo4j` into `xGT`.
-Finally, there are two queries included in this notebook that can be run directly on `neo4j` or on the `xGT` server after invoking the `arrow flight` plugin to transfer the data.
+First, run one of the setup notebooks.
+Each setup notebook, one for each dataset size, sets up a location on the server for storing all of the data in neo4j as well as the neo4j plugins needed for the demo.
+Running the notebook installs a neo4j Docker image on the server, creates a host filesystem directory with required plugins and the select dataset, ingests this data using the fastest `neo4j_admin import <...>` method, and installs an xGT Docker image.
+After running the setup notebook, there are two Docker containers running---neo4j and xGT---with data loaded into neo4j.
+These containers have exposed ports that enable the jupyter notebook environment to interact with them. 
+
+
+### Query notebook 
+
+Once the dataset has been set up in a running neo4j and an xGT is launched, the query notebook can be run.
+This notebook connects to neo4j using the [Neo4j Python Driver](https://neo4j.com/docs/api/python-driver/current/index.html), connects to the neo4j-arrow plugin, and connects to the running xGT server.
+A Python function coordinates the copying of data from neo4j into xGT.
+Finally, there are two queries included in this notebook that can be run directly on neo4j or on the xGT server after invoking the *arrow flight* plugin to transfer the data. 
