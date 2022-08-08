@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*- --------------------------------------------------===#
+#
+#  Copyright 2022 Trovares Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+#===----------------------------------------------------------------------===#
+
+name: PyTest
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/**'
+      - 'src/**'
+      - 'test/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '.github/**'
+      - 'src/**'
+      - 'test/**'
+  workflow_dispatch:
+
+jobs:
+  test:
+    timeout-minutes: 20
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.7','3.8', '3.9', '3.10']
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        python -m pip install --upgrade pip
+        pip install pytest xgt nbformat nbconvert notebook pandas maxminddb-geolite2
+
+
+    - name: Launch xGT
+      run: "docker run --rm -d --name xgt -p 4367:4367 trovares/xgt"
+
+    - name: Show docker containers
+      run: "docker ps -a"
+
+    - name: Run test suite
+      run: |
+        pytest -v test
