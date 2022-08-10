@@ -18,6 +18,9 @@
 
 name: PyTest xGT Against Private Docker Repo
 on:
+  schedule:
+    # Monday at 5 AM
+    - cron: "0 5 * * 1"
   workflow_dispatch:
 
 jobs:
