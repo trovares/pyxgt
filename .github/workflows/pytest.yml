@@ -22,13 +22,13 @@ on:
     branches: [ main ]
     paths:
       - '.github/**'
-      - 'src/**'
+      - 'demos/**'
       - 'test/**'
   pull_request:
     branches: [ main ]
     paths:
       - '.github/**'
-      - 'src/**'
+      - 'demos/**'
       - 'test/**'
   workflow_dispatch:
 
