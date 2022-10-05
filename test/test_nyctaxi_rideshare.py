@@ -33,9 +33,9 @@ class TestJupyterNotebook(unittest.TestCase):
         notebook = 'nyctaxi_rideshare.ipynb'
         notebook_loc = dir_path + '/../demos/nyctaxi/'
         sys.path.insert(0, notebook_loc)
-        # Pass stdin input to the notebook.
-        sys.stdin = StringIO(input)
         cls.nb, errors = run_notebook(notebook_loc + notebook)
+        if errors != []:
+            raise Exception(str(errors))
 
     def test_notebook_runs(self):
         # For now just test the notebook runs.
