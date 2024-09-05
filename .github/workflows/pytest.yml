@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- --------------------------------------------------===#
 #
-#  Copyright 2022 Trovares Inc.
+#  Copyright 2022-2024 Trovares Inc.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -55,7 +55,6 @@ jobs:
         sudo apt-get update
         python -m pip install --upgrade pip
         pip install pytest xgt nbformat nbconvert notebook pandas maxminddb-geolite2 requests
-
 
     - name: Launch xGT
       run: "docker run --rm -d --name xgt -p 4367:4367 trovares/xgt"
