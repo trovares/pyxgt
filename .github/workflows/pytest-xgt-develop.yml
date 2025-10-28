@@ -58,7 +58,7 @@ jobs:
         AWS_DEFAULT_REGION: us-west-2
 
     - name: Launch xGT
-      run: "docker run --rm -d --name xgt -p 4367:4367 890025695464.dkr.ecr.us-west-2.amazonaws.com/trovares/xgt-testing"
+      run: "docker run --rm -d --name xgt -p 4367:4367 890025695464.dkr.ecr.us-west-2.amazonaws.com/rocketgraph/xgt-testing:amd64-testing"
 
     - name: Show docker containers
       run: "docker ps -a"
