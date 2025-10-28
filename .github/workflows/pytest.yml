@@ -57,7 +57,7 @@ jobs:
         pip install pytest xgt nbformat nbconvert notebook pandas maxminddb-geolite2 requests
 
     - name: Launch xGT
-      run: "docker run --rm -d --name xgt -p 4367:4367 trovares/xgt"
+      run: "docker run --rm -d --name xgt -p 4367:4367 rocketgraph/xgt"
 
     - name: Show docker containers
       run: "docker ps -a"
