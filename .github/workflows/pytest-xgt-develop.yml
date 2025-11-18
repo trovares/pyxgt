@@ -51,7 +51,7 @@ jobs:
     - name: Pull images from AWS Repo
       run: |
         aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 890025695464.dkr.ecr.us-west-2.amazonaws.com
-        docker pull 890025695464.dkr.ecr.us-west-2.amazonaws.com/trovares/xgt-testing:latest
+        docker pull 890025695464.dkr.ecr.us-west-2.amazonaws.com/rocketgraph/xgt-testing:amd64-testing
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.PRIVATE_DOCKER_RUNNER_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.PRIVATE_DOCKER_RUNNER_KEY }}
